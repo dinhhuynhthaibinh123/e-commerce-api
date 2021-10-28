@@ -9,11 +9,13 @@ const orderRoute = require("./routes/order");
 const productRoute = require("./routes/product");
 const cors = require("cors");
 
+app.use(cors());
+
 dotenv.config();
 connectDB.connect();
 
 //Middeware
-app.use(cors());
+
 app.use(express.json());
 app.use(
   express.urlencoded({
